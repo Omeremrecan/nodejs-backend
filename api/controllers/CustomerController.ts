@@ -3,20 +3,26 @@ import CustomerService from '../../business/abstract/CustomerService'
 import { Inject } from 'typescript-ioc'
 import Controller from '../../core/web/Controller'
 import { Request, Response } from '../../core/web/ActionProps'
+import ControllerProps from '../../core/web/types/ControllerProps'
 
 export class CustomerController extends Controller {
   @Inject
   private customerService: CustomerService
 
-  constructor(app: Express) {
-    super(app)
+  constructor(props: ControllerProps) {
+    super(props)
+
+    this.addEndpoint('/customers', {
+      get: this.getCustomers,
+      post: this.saveCustomer,
+    })
   }
 
-  configureRoutes(): void {
-    this.app.get('/customers', this.getCustomers.bind(this))
-  }
-
-  getCustomers(req: Request, res: Response) {
+  public getCustomers(req: Request, res: Response) {
     res.send(this.customerService.getCustomers())
+  }
+
+  public saveCustomer(req: Request, res: Response) {
+    res.send(this.customerService.saveCustomer(req.body))
   }
 }
