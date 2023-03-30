@@ -18,11 +18,11 @@ export class CustomerController extends Controller {
     })
   }
 
-  public getCustomers(req: Request, res: Response) {
-    res.send(this.customerService.getCustomers())
+  public async getCustomers(req: Request, res: Response) {
+    res.send(await this.customerService.getCustomers())
   }
 
-  public saveCustomer(req: Request, res: Response) {
-    res.send(this.customerService.saveCustomer(req.body))
+  public async saveCustomer(req: Request, res: Response) {
+    res.send(await this.customerService.saveCustomer(req.body))
   }
 }

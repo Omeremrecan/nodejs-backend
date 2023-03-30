@@ -4,12 +4,12 @@ import Customer from "../../entities/Customer"
 
 export default class CustomerManager implements CustomerService {
   @LogAspect
-  public saveCustomer(customer: Customer): Customer {
+  public async saveCustomer(customer: Customer): Promise<Customer> {
     return customer;
   }
   
   @LogAspect
-  public getCustomers(): Customer[] {
+  public async getCustomers(): Promise<Customer[]> {
     return [
       { id: 1, name: 'Ömer' },
       { id: 2, name: 'Emre' },
