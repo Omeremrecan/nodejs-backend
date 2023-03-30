@@ -1,9 +1,9 @@
 import { Express } from 'express'
 import CustomerService from '../../business/abstract/CustomerService'
 import { Inject } from 'typescript-ioc'
-import Controller from '../../core/web/Controller'
-import { Request, Response } from '../../core/web/ActionProps'
-import ControllerProps from '../../core/web/types/ControllerProps'
+import Controller from '../../../core/web/Controller'
+import { Request, Response } from '../../../core/web/ActionProps'
+import ControllerProps from '../../../core/web/types/ControllerProps'
 
 export class CustomerController extends Controller {
   @Inject

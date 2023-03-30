@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx tsc",
-    "start:api": "node dist/api/index.js",
+    "start:api": "node dist/app/api/index.js",
     "restart:api": "npm run build && npm run start:api"
   },
   "author": "",

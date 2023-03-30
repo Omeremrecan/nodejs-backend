@@ -1,6 +1,6 @@
-import LogAspect from '../../core/aspects/LogAspect'
+import LogAspect from '../../../core/aspects/LogAspect'
 import CustomerService from '../abstract/CustomerService'
-import Customer from "../../entities/Customer"
+import Customer from "../../../app/entities/Customer"
 
 export default class CustomerManager implements CustomerService {
   @LogAspect

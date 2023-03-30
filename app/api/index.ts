@@ -1,7 +1,7 @@
 import express from 'express'
 import { CustomerController } from '../api/controllers/CustomerController'
-import useControllers from '../core/web/middlewares/useControllers'
-import useIoC from '../core/web/middlewares/useIoC'
+import useControllers from '../../core/web/middlewares/useControllers'
+import useIoC from '../../core/web/middlewares/useIoC'
 import { loadModule } from './dependencies'
 
 const app = express()
